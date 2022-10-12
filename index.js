@@ -1,26 +1,39 @@
-// http(hypertext Transfer protocol)-event driven module
+//http(hypertext Transfer protocol)-event driven module
 
-// const { Socket } = require('dgram');
-// const http = require('http');
 
-// const server = http.createServer();
+const http = require('http');
 
-// server.listen(3000);
+const port = 3000;
+const data = {
+    Name:'Paresh',
+    LastName:'Patil',
+    Age:24,
+    city:'Jalgaon'
+}
+const jsonData = JSON.stringify(data);
 
-// server.on('connection',(Socket)=>{
-//     console.log("Hello New Commer")
-// })
+ const server = http.createServer((req, res) => {
+    res.write(`<h1 > Hello New User</h1>`);
+    res.write(jsonData);
+    res.end();
+})
+
+server.listen(port, () => {
+    console.log(`Connected to port ${port}💡`);
+
+})
+
 
 
 // Express
-const express= require('express');
+// const express= require('express');
  
-const app= express();
+// const app = express();
 
-app.get('/',(req,res)=>{
-    res.send(JSON.stringify([1,2,3]))
-})
+// app.get('/',(req,res)=>{
+//     res.send('JSON.stringify([1,2,3])')
+// })
 
-app.listen('3000',(req, res)=>{
-    console.log(req);
-} )
+// app.listen('3000',(req, res)=>{
+//     console.log(req);
+// } )
