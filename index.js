@@ -1,39 +1,39 @@
-//http(hypertext Transfer protocol)-event driven module
+// http(hypertext Transfer protocol)-event driven module
+// const { Socket } = require('dgram');
 
+// const http = require('http');
 
-const http = require('http');
+// const server = http.createServer();
 
-const port = 3000;
-const data = {
-    Name:'Paresh',
-    LastName:'Patil',
-    Age:24,
-    city:'Jalgaon'
-}
-const jsonData = JSON.stringify(data);
+// server.listen(3000);
 
- const server = http.createServer((req, res) => {
-    res.write(`<h1 > Hello New User</h1>`);
-    res.write(jsonData);
-    res.end();
-})
-
-server.listen(port, () => {
-    console.log(`Connected to port ${port}💡`);
-
-})
-
+// server.on('connection',(Socket)=>{
+//     console.log("Hello New Commer")
+// })
 
 
 // Express
-// const express= require('express');
- 
-// const app = express();
+const express= require('express');
+ const cores = require('cores')
+const app = express();
 
-// app.get('/',(req,res)=>{
-//     res.send('JSON.stringify([1,2,3])')
-// })
+// const middleware = (req,res, next) => {
+// console.log('Got login req');
+// }
 
-// app.listen('3000',(req, res)=>{
-//     console.log(req);
-// } )
+app.get('/',(req,res)=>{
+   
+    res.send('JSON.stringify([1,2,3])')
+})
+
+app.get('/api',(req,res)=>{
+    
+    res.json({
+        fName:'Paresh',
+        lName:"Patil"
+    })
+})
+
+app.listen('9000',(req, res)=>{
+    console.log(req);
+} )
