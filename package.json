@@ -1,16 +1,25 @@
 {
-  "name": "day1",
+  "name": "tt",
   "version": "1.0.0",
-  "description": "This is practice",
-  "main": "express.js",
+  
+  "description": "Node js Introduction",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paresh09pat/tt.git"
   },
   "author": "Paresh",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paresh09pat/tt/issues"
+  },
+  "homepage": "https://github.com/Paresh09pat/tt#readme",
   "dependencies": {
-    "cores": "^0.8.5",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "nodemon": "^2.0.20"
   }

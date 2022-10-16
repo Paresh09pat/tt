@@ -14,20 +14,20 @@
 
 // Express
 const express= require('express');
- const cores = require('cores')
+ const cors = require('cors')
 const app = express();
 
-// const middleware = (req,res, next) => {
-// console.log('Got login req');
-// }
+app.use(cors())
+const middleware = (req,res, next) => {
+console.log('Got login req');
+}
 
-app.get('/',(req,res)=>{
+app.get('/',cors(),(req,res)=>{
    
-    res.send('JSON.stringify([1,2,3])')
+    res.send('JSON.stringify([11,22,33])')
 })
 
-app.get('/api',(req,res)=>{
-    
+app.get('/api',(req,res)=>{ 
     res.json({
         fName:'Paresh',
         lName:"Patil"
